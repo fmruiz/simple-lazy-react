@@ -1,5 +1,7 @@
 import React from 'react';
 
-export const LazyPageThree = () => {
+const LazyPageThree = () => {
     return <div>LazyPageThree</div>;
 };
+
+export default LazyPageThree;
