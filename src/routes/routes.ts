@@ -9,9 +9,24 @@ interface Route {
     Component: React.LazyExoticComponent<JSXComponent> | JSXComponent;
 }
 
-const LazyOne = lazy(() => import('../lazyload/pages/LazyPageOne'));
-const LazyTwo = lazy(() => import('../lazyload/pages/LazyPageTwo'));
-const LazyThree = lazy(() => import('../lazyload/pages/LazyPageThree'));
+const LazyOne = lazy(
+    () =>
+        import(
+            /* webpackChunkName: "LazyOne" */ '../lazyload/pages/LazyPageOne'
+        )
+);
+const LazyTwo = lazy(
+    () =>
+        import(
+            /* webpackChunkName: "LazyTwo" */ '../lazyload/pages/LazyPageTwo'
+        )
+);
+const LazyThree = lazy(
+    () =>
+        import(
+            /* webpackChunkName: "LazyThree" */ '../lazyload/pages/LazyPageThree'
+        )
+);
 
 export const routes: Route[] = [
     {
